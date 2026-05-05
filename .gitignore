@@ -1,0 +1,30 @@
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Test screenshots from local verification (kept out of repo)
+/analysis-report.png
+/analysis-with-urls.png
+/desktop-*.png
+/mobile-*.png
+/tablet-*.png
+/menu-large.png
+/menu-zoomed.png
+/menu-zoomed-2.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log

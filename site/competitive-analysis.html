@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Competitive Analysis | The Tamale Shakk Houston</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f4f0;
+    --paper-card:#fffefa;
+    --ink:#1a1715;
+    --ink-soft:#3a342f;
+    --muted:#7a7068;
+    --hairline:rgba(26,23,21,.12);
+    --terracotta:#c45d3e;
+    --terracotta-soft:#e8a890;
+    --gold:#caa14a;
+    --serif:"Instrument Serif",Georgia,serif;
+    --sans:"DM Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{position:relative;min-height:100vh}
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity:.6;mix-blend-mode:multiply;
+  }
+  .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:64px 56px 96px}
+  .cover{padding:48px 0 80px;border-bottom:1px solid var(--hairline);margin-bottom:64px}
+  .badge{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);font-weight:600;border:1px solid var(--terracotta);padding:6px 14px;border-radius:999px}
+  h1{font-family:var(--serif);font-weight:400;font-size:72px;line-height:.95;margin:24px 0 16px;letter-spacing:-.02em}
+  h1 em{font-style:italic;color:var(--terracotta)}
+  h2{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.05;margin:0 0 16px;letter-spacing:-.01em}
+  h3{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2;margin:0 0 8px;letter-spacing:-.005em}
+  .lede{font-size:17px;line-height:1.55;color:var(--ink-soft);max-width:640px}
+  .meta{display:flex;gap:32px;margin-top:40px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .meta b{color:var(--ink);font-weight:500}
+  section{margin:0 0 72px;position:relative}
+  .phase-num{font-family:var(--serif);font-size:120px;line-height:1;color:rgba(196,93,62,.18);position:absolute;left:-20px;top:-32px;z-index:0}
+  .phase-head{position:relative;z-index:1;margin-bottom:32px}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta);font-weight:600;display:block;margin-bottom:8px}
+  .summary{padding:28px 32px;background:var(--paper-card);border-left:4px solid var(--terracotta);border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.03);margin-bottom:32px}
+  .summary p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .grid{display:grid;gap:20px}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--paper-card);border-radius:6px;padding:28px 32px;border-left:4px solid var(--terracotta);box-shadow:0 1px 0 rgba(0,0,0,.03);transition:box-shadow .25s,transform .25s;position:relative}
+  .card:hover{box-shadow:0 8px 24px rgba(26,23,21,.08);transform:translateY(-1px)}
+  .card .rank{position:absolute;top:24px;right:32px;font-family:var(--serif);font-size:36px;color:rgba(196,93,62,.35);line-height:1}
+  .card .url{display:inline-block;font-size:11.5px;letter-spacing:.04em;color:var(--terracotta);font-family:var(--sans);font-weight:500;margin:6px 0 14px;text-decoration:none;border-bottom:1px solid rgba(196,93,62,.4);padding-bottom:1px;word-break:break-all}
+  .card .url:hover{color:var(--ink);border-bottom-color:var(--ink)}
+  .swatches{display:flex;gap:8px;margin:14px 0}
+  .swatch{width:28px;height:28px;border-radius:6px;border:1px solid var(--hairline);position:relative}
+  .swatch::after{content:attr(data-hex);position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--muted);white-space:nowrap}
+  .swatch-row{margin-bottom:18px;padding-bottom:8px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tag{font-size:11px;letter-spacing:.06em;color:var(--ink-soft);background:rgba(196,93,62,.08);border:1px solid rgba(196,93,62,.18);padding:5px 11px;border-radius:999px}
+  .tag.warn{background:rgba(120,80,40,.06);border-color:rgba(120,80,40,.2);color:#7a4f28}
+  table{width:100%;border-collapse:collapse;background:var(--paper-card);border-radius:6px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.03);margin-top:8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--hairline);font-size:13.5px}
+  th{font-family:var(--serif);font-weight:400;font-size:15px;background:rgba(196,93,62,.06);color:var(--ink)}
+  td.score{font-family:var(--serif);font-size:18px;color:var(--terracotta)}
+  td.total{font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:600}
+  ul.findings{list-style:none;padding:0;margin:0}
+  ul.findings li{position:relative;padding:14px 0 14px 28px;border-bottom:1px solid var(--hairline);font-size:15px;line-height:1.55}
+  ul.findings li:last-child{border-bottom:none}
+  ul.findings li::before{content:"";position:absolute;left:0;top:22px;width:14px;height:1px;background:var(--terracotta)}
+  ul.findings b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:4px}
+  .flow{position:relative;height:48px;margin:-8px 0 24px 32px;border-left:1px dashed var(--terracotta-soft)}
+  .quote{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink-soft);padding:24px 32px;border-left:2px solid var(--terracotta);margin:24px 0}
+  .quote cite{display:block;font-style:normal;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+  footer{margin-top:96px;padding-top:32px;border-top:1px solid var(--hairline);font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
+  footer .credit{margin-top:20px;padding-top:20px;border-top:1px solid var(--hairline);font-size:12px;letter-spacing:.08em}
+  footer .credit a{color:var(--terracotta);font-weight:600;border-bottom:1px solid var(--terracotta);text-decoration:none}
+  @media (max-width:640px){
+    .wrap{padding:32px 22px 64px}
+    h1{font-size:46px}
+    h2{font-size:30px}
+    .grid-2{grid-template-columns:1fr}
+    .phase-num{font-size:80px;left:-6px;top:-22px}
+    .meta{flex-direction:column;gap:12px}
+    table{font-size:12px}
+    th,td{padding:10px 8px}
+  }
+  @media print{
+    body{background:#fff}
+    body::before{display:none}
+    .wrap{max-width:none;padding:24px 32px}
+    .card{break-inside:avoid;box-shadow:none;border:1px solid var(--hairline);border-left:4px solid var(--terracotta)}
+    section{break-inside:avoid}
+    h1{font-size:54px}
+    .phase-num{display:none}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <span class="badge">Competitive Analysis</span>
+  <h1>The Tamale Shakk Houston <em>vs. the field</em></h1>
+  <p class="lede">A research-led teardown of the Houston tamale market and the Mississippi Delta heritage operators that define the category. Written for the Thompson family ahead of the website rebuild.</p>
+  <div class="meta">
+    <span><b>Client</b><br>The Tamale Shakk Houston</span>
+    <span><b>Prepared</b><br>May 2026</span>
+    <span><b>Scope</b><br>Web rebuild, brand, IA</span>
+  </div>
+</header>
+
+<section>
+  <span class="phase-num">01</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section One</span>
+    <h2>Executive summary</h2>
+  </div>
+  <div class="summary">
+    <p>Tamale Shakk Houston has the strongest founder story in the Houston tamale market and a category of one (real Mississippi Delta tamales sold in Texas), but the existing one-page Wix site says none of it. The competitors who win in this niche lead with a family narrative, ship real online ordering, and surface social proof above the fold. The rebuild closes all three gaps and claims the uncontested search term "Delta tamales Houston" along the way.</p>
+  </div>
+</section>
+
+<section>
+  <span class="phase-num">02</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section Two</span>
+    <h2>Competitor profiles</h2>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <span class="rank">01</span>
+      <h3>Alamo Tamale &amp; Taco</h3>
+      <a class="url" href="https://www.alamotamale.com/" target="_blank" rel="noopener">alamotamale.com</a>
+      <div class="swatch-row swatches">
+        <span class="swatch" data-hex="#B22234" style="background:#B22234"></span>
+        <span class="swatch" data-hex="#F1E7D2" style="background:#F1E7D2"></span>
+        <span class="swatch" data-hex="#3A2A1A" style="background:#3A2A1A"></span>
+      </div>
+      <p>Houston's incumbent. "Houston's Famous Handmade Tamales" headline, Toast Tab ordering, 4.5-star Google rating embedded.</p>
+      <div class="tags">
+        <span class="tag">Strong CTAs</span>
+        <span class="tag">Real social proof</span>
+        <span class="tag warn">Template look</span>
+        <span class="tag warn">No story</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="rank">02</span>
+      <h3>Balderas Tamale Factory</h3>
+      <a class="url" href="https://www.balderastamalefactory.com/" target="_blank" rel="noopener">balderastamalefactory.com</a>
+      <div class="swatch-row swatches">
+        <span class="swatch" data-hex="#C9A036" style="background:#C9A036"></span>
+        <span class="swatch" data-hex="#7A2A1A" style="background:#7A2A1A"></span>
+        <span class="swatch" data-hex="#FAF3E3" style="background:#FAF3E3"></span>
+      </div>
+      <p>Family-narrative leader. Founder Dan Balderas's military-to-tamale journey is the entire brand. Transparent pricing.</p>
+      <div class="tags">
+        <span class="tag">Origin story</span>
+        <span class="tag">Recognitions page</span>
+        <span class="tag warn">Flat hierarchy</span>
+        <span class="tag warn">No reviews</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="rank">03</span>
+      <h3>The Tamale Joint</h3>
+      <a class="url" href="https://www.thetamalejoint.com/" target="_blank" rel="noopener">thetamalejoint.com</a>
+      <div class="swatch-row swatches">
+        <span class="swatch" data-hex="#C9A567" style="background:#C9A567"></span>
+        <span class="swatch" data-hex="#FFFFFF" style="background:#FFFFFF;border-color:#ccc"></span>
+        <span class="swatch" data-hex="#2C2622" style="background:#2C2622"></span>
+      </div>
+      <p>2021 cohort like Tamale Shakk. Square-powered ordering, glossy food photography, modern minimalist palette.</p>
+      <div class="tags">
+        <span class="tag">Modern UI</span>
+        <span class="tag">Online ordering</span>
+        <span class="tag warn">Thin story</span>
+        <span class="tag warn">Zero testimonials</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="rank">04</span>
+      <h3>Doe's Eat Place</h3>
+      <a class="url" href="https://www.doeseatplace.com/" target="_blank" rel="noopener">doeseatplace.com</a>
+      <div class="swatch-row swatches">
+        <span class="swatch" data-hex="#1A1715" style="background:#1A1715"></span>
+        <span class="swatch" data-hex="#C8A45A" style="background:#C8A45A"></span>
+        <span class="swatch" data-hex="#FAF8F4" style="background:#FAF8F4"></span>
+      </div>
+      <p>The category gold standard out of Greenville, MS. James Beard "America's Classic". Sells legacy first, product second.</p>
+      <div class="tags">
+        <span class="tag">Heritage IA</span>
+        <span class="tag">Press credentials</span>
+        <span class="tag warn">Placeholder photos</span>
+        <span class="tag warn">Dated visual</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="rank">05</span>
+      <h3>Hot Tamale Heaven</h3>
+      <a class="url" href="https://hottamaleheaven.com/" target="_blank" rel="noopener">hottamaleheaven.com</a>
+      <div class="swatch-row swatches">
+        <span class="swatch" data-hex="#888" style="background:#888"></span>
+      </div>
+      <p>Domain squatted by an unrelated spice/electronics template. The actual Greenville operator runs entirely on Facebook. A pattern across the Delta heritage segment.</p>
+      <div class="tags">
+        <span class="tag warn">Disqualified</span>
+        <span class="tag warn">No real site</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="phase-num">03</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section Three</span>
+    <h2>Scoring matrix</h2>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Design</th>
+        <th>Mobile</th>
+        <th>Content</th>
+        <th>Social proof</th>
+        <th>CTA</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Alamo Tamale &amp; Taco</b></td>
+        <td class="score">7.5</td>
+        <td class="score">7</td>
+        <td class="score">7</td>
+        <td class="score">8</td>
+        <td class="score">8</td>
+        <td class="total">37.5</td>
+      </tr>
+      <tr>
+        <td><b>The Tamale Joint</b></td>
+        <td class="score">8</td>
+        <td class="score">7</td>
+        <td class="score">6</td>
+        <td class="score">4</td>
+        <td class="score">8</td>
+        <td class="total">33</td>
+      </tr>
+      <tr>
+        <td><b>Doe's Eat Place</b></td>
+        <td class="score">6</td>
+        <td class="score">7</td>
+        <td class="score">8</td>
+        <td class="score">5</td>
+        <td class="score">7</td>
+        <td class="total">33</td>
+      </tr>
+      <tr>
+        <td><b>Balderas Tamale Factory</b></td>
+        <td class="score">7</td>
+        <td class="score">6</td>
+        <td class="score">8</td>
+        <td class="score">5</td>
+        <td class="score">7</td>
+        <td class="total">33</td>
+      </tr>
+      <tr>
+        <td><b>Hot Tamale Heaven</b></td>
+        <td class="score">5</td>
+        <td class="score">6</td>
+        <td class="score">3</td>
+        <td class="score">2</td>
+        <td class="score">4</td>
+        <td class="total">20</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <span class="phase-num">04</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section Four</span>
+    <h2>SEO landscape</h2>
+  </div>
+  <p style="font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:680px;margin-bottom:20px">Five core query clusters drive Houston tamale traffic. Tamale Shakk has a category of one in two of them, and the existing site captures none.</p>
+  <ul class="findings">
+    <li><b>"delta tamales houston" &nbsp;|&nbsp; uncontested</b>No Houston operator competes for the Mississippi Delta style. Easy first-page lock with on-page work.</li>
+    <li><b>"mississippi tamales texas" &nbsp;|&nbsp; uncontested</b>Same story. The educational "What is a Delta tamale" section doubles as keyword body.</li>
+    <li><b>"hot tamales near me" &nbsp;|&nbsp; mid contest</b>Local pack play. Requires a real address, hours, and schema markup.</li>
+    <li><b>"best tamales houston" &nbsp;|&nbsp; high contest</b>Alamo, Balderas, and Houstonia features dominate. Win via press citations and reviews, not on-page.</li>
+    <li><b>"tamale catering pearland" &nbsp;|&nbsp; low contest</b>A dedicated catering page with form capture closes this query.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="phase-num">05</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section Five</span>
+    <h2>Patterns of the top 10%</h2>
+  </div>
+  <ul class="findings">
+    <li><b>Story before menu.</b>Every operator scoring 33+ leads with a founder narrative. Tamale Shakk has a stronger story than any of them. Use it.</li>
+    <li><b>Real online ordering, not a phone number.</b>Three of five had Toast, Square, or BestFoodTrucks. The current Tamale Shakk site asks visitors to call for hours. That is the 2026 conversion floor.</li>
+    <li><b>Visible social proof above the fold.</b>Star ratings, press quotes, and championship banners do the selling that copy can't. Tamale Shakk has four Delta Festival titles and a Substack feature waiting to be surfaced.</li>
+    <li><b>One saturated accent on warm neutrals.</b>Winners pair cream and walnut with one bold hue. The Shakk's existing burnt orange + festival red is already there.</li>
+    <li><b>Educational content that doubles as SEO.</b>"Our Story" pages, "Recognitions", "What is a Delta tamale". Content that earns the click also ranks.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="phase-num">06</span>
+  <div class="phase-head">
+    <span class="eyebrow">Section Six</span>
+    <h2>Recommended direction</h2>
+  </div>
+  <div class="quote">
+    "I have some people, once they find us, who say 'oh my god, we've been looking for a Mississippi Delta tamale.'"
+    <cite>Katrina Thompson, co-founder</cite>
+  </div>
+  <p style="font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:680px">The new site is built around that quote. Visitors who already know what a Delta tamale is should find the truck. Visitors who don't should learn, fall in love, and find the truck.</p>
+  <div class="grid grid-2" style="margin-top:24px">
+    <div class="card">
+      <h3>Palette</h3>
+      <div class="swatches">
+        <span class="swatch" data-hex="#D55A1B" style="background:#D55A1B"></span>
+        <span class="swatch" data-hex="#C8102E" style="background:#C8102E"></span>
+        <span class="swatch" data-hex="#F5B335" style="background:#F5B335"></span>
+        <span class="swatch" data-hex="#4A2A18" style="background:#4A2A18"></span>
+        <span class="swatch" data-hex="#FAF3E3" style="background:#FAF3E3"></span>
+      </div>
+      <p style="margin-top:24px">Pulled from the food truck itself. Burnt orange leads, festival red and gold accent, walnut grounds, cornmeal cream as paper.</p>
+    </div>
+    <div class="card">
+      <h3>Typography</h3>
+      <p><b style="font-family:'Instrument Serif',serif;font-size:24px;font-weight:400">Alfa Slab One</b> &nbsp; for hero display. Slab serif honors the western shack logo without copying it.</p>
+      <p style="margin-top:12px"><b style="font-family:'DM Sans',sans-serif;font-weight:600">Inter</b> &nbsp; for body. Modern, neutral, readable on every phone in Pearland.</p>
+    </div>
+    <div class="card">
+      <h3>Architecture</h3>
+      <p>Single page on launch with deep anchors: Story, Menu, Find the Truck, Catering, Press, Pre-Order. Catering and Press get standalone routes once content lands.</p>
+    </div>
+    <div class="card">
+      <h3>Animation</h3>
+      <p>GSAP scroll-triggered reveals, gentle parallax on the food hero, hover lift on cards. Reduced-motion respected. Cinematic but not gimmicky.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Confidential. Prepared for The Tamale Shakk Houston, May 2026.
+  <div class="credit">
+    Created by <a href="https://www.chatbotboy.ai/" target="_blank" rel="noopener">Chatbot Boy AI</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
