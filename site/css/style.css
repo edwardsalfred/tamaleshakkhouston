@@ -63,24 +63,18 @@ a:hover{color:var(--orange-deep)}
 }
 .nav.scrolled .nav-brand img{width:64px;height:64px}
 
-.nav-links{display:flex;align-items:center;gap:8px}
-
-@media (min-width:961px){
-  .nav-links a:not(.btn){
-    font-size:13.5px;font-weight:600;color:var(--cream);
-    letter-spacing:.02em;position:relative;
-    padding:10px 16px;border-radius:999px;
-    background:var(--walnut-deep);
-    border:1px solid var(--walnut-deep);
-    box-shadow:0 2px 6px rgba(0,0,0,.08);
-    transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;
-  }
-  .nav-links a:not(.btn):hover{
-    color:var(--cream);background:var(--orange);
-    border-color:var(--orange);transform:translateY(-1px);
-    box-shadow:0 6px 16px rgba(213,90,27,.35);
-  }
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a:not(.btn){
+  font-size:14px;font-weight:500;color:var(--ink-soft);
+  letter-spacing:.01em;position:relative;padding:6px 0;
+  transition:color .2s;
 }
+.nav-links a:not(.btn):hover{color:var(--orange)}
+.nav-links a:not(.btn)::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s;
+}
+.nav-links a:not(.btn):hover::after{transform:scaleX(1)}
 
 /* nav button: explicit color override so .nav-links a {color:ink} doesn't win */
 .nav-links a.btn-nav{
@@ -173,7 +167,7 @@ h1 em{font-style:normal;color:var(--gold)}
 
 /* BANDS */
 .band{padding:120px 0;position:relative;overflow:hidden}
-.band-cream{background:var(--cream)}
+.band-cream{background:#3a200f;color:var(--cream)}
 .band-walnut{background:var(--walnut-deep);color:var(--cream)}
 .band-orange{background:var(--orange);color:var(--cream)}
 .band-red{background:linear-gradient(135deg,var(--red) 0%,var(--orange-deep) 100%);color:var(--cream)}
@@ -181,13 +175,14 @@ h1 em{font-style:normal;color:var(--gold)}
 .band-head{max-width:780px;margin:0 auto 64px;text-align:center}
 .band-head h2{margin-top:14px}
 .band-lede{font-size:18px;color:var(--ink-soft);margin-top:16px;line-height:1.6}
-.band-walnut .band-lede,.band-orange .band-lede,.band-red .band-lede{color:rgba(250,243,227,.85)}
+.band-cream .band-lede,.band-walnut .band-lede,.band-orange .band-lede,.band-red .band-lede{color:rgba(250,243,227,.85)}
 
 h2{
   font-family:var(--display);font-weight:400;
   font-size:clamp(34px,4.5vw,60px);line-height:1.05;
   margin:0 0 20px;letter-spacing:-.005em;color:var(--ink);
 }
+.band-cream h2,.band-walnut h2,.band-orange h2,.band-red h2{color:var(--cream)}
 .h-light{color:var(--cream)}
 .p-light{color:rgba(250,243,227,.88);font-size:17px;line-height:1.65;max-width:60ch}
 h3{
@@ -202,16 +197,16 @@ p{margin:0 0 16px}
 .two-col{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
 
 /* STORY */
-#story p{font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:56ch}
+#story p{font-size:17px;line-height:1.7;color:rgba(250,243,227,.88);max-width:56ch}
 .pull-quote{
   font-family:var(--display);font-weight:400;font-size:22px;line-height:1.4;
-  color:var(--orange-deep);border-left:3px solid var(--orange);
-  padding:18px 22px;margin:32px 0 0;background:rgba(245,179,53,.12);border-radius:0 8px 8px 0;
+  color:var(--gold);border-left:3px solid var(--orange);
+  padding:20px 24px;margin:32px 0 0;background:rgba(245,179,53,.08);border-radius:0 8px 8px 0;
 }
-.pull-quote em{font-style:italic;color:var(--ink-soft);font-family:var(--sans);font-size:18px;font-weight:400}
+.pull-quote em{font-style:italic;color:rgba(250,243,227,.92);font-family:var(--sans);font-size:18px;font-weight:400}
 .pull-quote cite{
   display:block;margin-top:14px;font-style:normal;font-family:var(--sans);
-  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;
 }
 .story-card{
   background:var(--cream-warm);border-radius:var(--r);
@@ -334,7 +329,7 @@ p{margin:0 0 16px}
 .btn-ghost-dark:hover{background:rgba(250,243,227,.12);color:var(--cream);border-color:var(--cream)}
 .menu-disclaimer{
   text-align:center;margin-top:32px;
-  font-size:13.5px;color:var(--muted);font-style:italic;
+  font-size:13.5px;color:rgba(250,243,227,.62);font-style:italic;
 }
 
 /* TRUCK */
