@@ -67,16 +67,18 @@ a:hover{color:var(--orange-deep)}
 
 @media (min-width:961px){
   .nav-links a:not(.btn){
-    font-size:13.5px;font-weight:600;color:var(--ink);
+    font-size:13.5px;font-weight:600;color:var(--cream);
     letter-spacing:.02em;position:relative;
     padding:10px 16px;border-radius:999px;
-    background:rgba(74,42,24,.06);
-    border:1px solid rgba(74,42,24,.1);
-    transition:background .2s,color .2s,border-color .2s,transform .2s;
+    background:var(--walnut-deep);
+    border:1px solid var(--walnut-deep);
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    transition:background .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;
   }
   .nav-links a:not(.btn):hover{
     color:var(--cream);background:var(--orange);
     border-color:var(--orange);transform:translateY(-1px);
+    box-shadow:0 6px 16px rgba(213,90,27,.35);
   }
 }
 
