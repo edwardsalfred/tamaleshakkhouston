@@ -276,7 +276,6 @@ p{margin:0 0 16px}
 .menu-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(74,42,24,.14)}
 .menu-card.menu-flagship{
   border-left-color:var(--red);
-  background:linear-gradient(160deg,var(--cream-warm) 0%,#f0dcb0 100%);
   box-shadow:0 8px 24px rgba(200,16,46,.08);
 }
 .menu-icon{
